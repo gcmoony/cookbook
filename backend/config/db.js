@@ -12,7 +12,7 @@ mongoose.set("strictQuery", true, "useNewUrlParser", true)
 const connectDB = async () => {
   try {
     await mongoose.connect(db)
-    console.log("Conencted to DB")
+    console.log("Connected to DB")
   } catch (e) {
     console.error("Database connection error")
     process.exit(1)
