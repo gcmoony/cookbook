@@ -82,12 +82,12 @@ function ShowRecipeList() {
         onChange={updateSearch}
       />
       {/* <div className="list">{recipeList}</div> */}
-      <div className='flex justify-center items-center'>
+      <div className='flex justify-center items-center mb-2'>
         <button
-          className='text-sm'
+          className='text-sm border-1 border-slate-700'
           onClick={updateCardStyle}
         >
-          Change View
+          {viewStyle == "picture" ? "📷" : "📃"}
         </button>
       </div>
       <div

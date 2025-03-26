@@ -44,7 +44,7 @@ function ShowRecipeDetails(props) {
       <article>
         <h1>{recipe.title}</h1>
         <div>
-          By {recipe.author}
+          {/* By {recipe.author} */}
           {/* <br/>
           <span>Published {recipe.publish_date}</span>
           <br/>

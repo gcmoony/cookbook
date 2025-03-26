@@ -5,18 +5,20 @@ import ImageTile from "./ImageTile"
 function RecipeCard({ recipe, varient }) {
   return (
     <div className=' bg-slate-900 rounded-xl p-4'>
-      {varient === "picture" && recipe.imageLink ? (
-        <img
-          className='aspect-square min-w-full object-cover bg-slate-600 text-center rounded-xl '
-          src={recipe.imageLink}
-          alt=' Recipe Picture'
-        />
-      ) : (
-        varient === "picture" && (
-          <div className='aspect-square min-w-full bg-slate-700 flex justify-center items-center rounded-xl '>
-            <span className='-rotate-45 text-xl'>No image available</span>
-          </div>
-        )
+      {varient == "picture" && (
+        <>
+          {recipe.imageLink ? (
+            <img
+              className='aspect-square min-w-full object-cover bg-slate-600 text-center rounded-xl '
+              src={recipe.imageLink}
+              alt=' Recipe Picture'
+            />
+          ) : (
+            <div className='aspect-square min-w-full bg-slate-700 flex justify-center items-center rounded-xl '>
+              <span className='-rotate-45 text-xl'>No image available</span>
+            </div>
+          )}
+        </>
       )}
 
       {/* <ImageTile  imageLink={recipe.imageLink}/> */}

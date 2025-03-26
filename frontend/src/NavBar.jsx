@@ -19,7 +19,9 @@ export default function NavBar({ loggedIn }) {
         </h1>
         <span className='opacity-60 italic'>Your favorite recipes</span>
       </div>
-      <div className='bg-slate-900 py-2 px-6 rounded-lg'>
+
+      <div>
+        {/* <div className='bg-slate-900 py-2 px-6 rounded-lg'> */}
         {/* {!loggedIn ? askLogin() : showLogin()} */}
       </div>
     </nav>
