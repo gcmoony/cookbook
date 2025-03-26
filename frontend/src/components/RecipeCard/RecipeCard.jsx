@@ -2,10 +2,10 @@ import { Link } from "react-router-dom"
 import ImageTile from "./ImageTile"
 // import "./RecipeCard.css"
 
-function RecipeCard({ recipe, varient }) {
+function RecipeCard({ recipe, variant }) {
   return (
     <div className=' bg-slate-900 rounded-xl p-4'>
-      {varient == "picture" && (
+      {variant == "picture" && (
         <>
           {recipe.imageLink ? (
             <img
@@ -23,7 +23,7 @@ function RecipeCard({ recipe, varient }) {
 
       {/* <ImageTile  imageLink={recipe.imageLink}/> */}
       <div className='desc'>
-        <h2 className={`font-bold ${varient == "picture" && "mt-4"} text-lg`}>
+        <h2 className={`font-bold ${variant == "picture" && "mt-4"} text-lg`}>
           <Link to={`/show-recipe/${recipe._id}`}>{recipe.title}</Link>
         </h2>
         {/* <span>By {recipe.author}</span> */}
