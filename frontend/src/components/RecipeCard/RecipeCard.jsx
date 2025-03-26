@@ -23,7 +23,7 @@ function RecipeCard({ recipe, varient }) {
 
       {/* <ImageTile  imageLink={recipe.imageLink}/> */}
       <div className='desc'>
-        <h2 className='font-bold mt-4 text-lg'>
+        <h2 className={`font-bold ${varient == "picture" && "mt-4"} text-lg`}>
           <Link to={`/show-recipe/${recipe._id}`}>{recipe.title}</Link>
         </h2>
         {/* <span>By {recipe.author}</span> */}

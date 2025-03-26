@@ -14,7 +14,9 @@ function ShowRecipeList() {
   }
 
   const updateCardStyle = () => {
-    viewStyle == "picture" ? "no-picture" : "picture"
+    viewStyle == "picture"
+      ? setViewStyle("no-picture")
+      : setViewStyle("picture")
   }
 
   const uri = "http://192.168.0.132:1122/api/recipes/"
