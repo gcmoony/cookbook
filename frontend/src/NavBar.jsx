@@ -15,7 +15,7 @@ export default function NavBar({ loggedIn }) {
     <nav className='nav flex justify-between py-4 items-center'>
       <div>
         <h1 className='text-2xl'>
-          <a href='/'>RecipeBook</a>
+          <a href='/'>CookBook</a>
         </h1>
         <span className='opacity-60 italic'>Your favorite recipes</span>
       </div>
