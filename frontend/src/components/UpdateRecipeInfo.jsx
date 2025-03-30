@@ -7,7 +7,6 @@ function UpdateRecipeInfo(props) {
   const navigate = useNavigate()
   const { id } = useParams()
 
-
   const uri = `http://192.168.0.132:1122/api/recipes/${id}`
 
   const [recipe, setRecipe] = useState({
@@ -23,7 +22,7 @@ function UpdateRecipeInfo(props) {
   })
 
   function onSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     const data = {
       title: recipe.title,
@@ -36,25 +35,25 @@ function UpdateRecipeInfo(props) {
       description: recipe.description,
       author: recipe.author,
       publish_date: recipe.publish_date,
-      updated_date: Date.now()
+      updated_date: Date.now(),
     }
 
-    axios.put(uri, data)
-    .then((res) => {
-
-      // Push to /
-      navigate(`/show-recipe/${id}`)
-    })
-    .catch((e) => console.log("Error in UpdateRecipeInfo"))
+    axios
+      .put(uri, data)
+      .then((res) => {
+        // Push to /
+        navigate(`/show-recipe/${id}`)
+      })
+      .catch((e) => console.log("Error in UpdateRecipeInfo"))
   }
 
   const onChange = (e) => {
-    setRecipe({...recipe, [e.target.name]: e.target.value})
+    setRecipe({ ...recipe, [e.target.name]: e.target.value })
   }
 
-
   useEffect(() => {
-    axios.get(uri)
+    axios
+      .get(uri)
       .then((res) => {
         setRecipe({
           title: res.data.title,
@@ -71,17 +70,21 @@ function UpdateRecipeInfo(props) {
       .catch((e) => console.log("Error in UpdateRecipeInfo"))
   }, [id])
 
-  
-
-  
-
-  return <div>
-    <div className="container">
-      <h1>Edit Recipe</h1>
-      <p>Make changes to your recipe below</p>
-      <RecipeForm subMethod={onSubmit} formType="Update" changeMethod={onChange} recipe={recipe}/>
+  return (
+    <div>
+      <div className='container'>
+        <h1>Edit Recipe</h1>
+        <p>Make changes to your recipe below</p>
+        <RecipeForm
+          subMethod={onSubmit}
+          formType='Update'
+          changeMethod={onChange}
+          recipe={recipe}
+          prevPage={`/show-recipe/${id}`}
+        />
+      </div>
     </div>
-  </div>
+  )
 }
 
 export default UpdateRecipeInfo
