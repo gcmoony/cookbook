@@ -19,7 +19,7 @@ function ShowRecipeList() {
       : setViewStyle("picture")
   }
 
-  const uri = "http://192.168.0.132:1122/api/recipes/"
+  const uri = `http://${import.meta.env.VITE_BACKEND}:1122/api/recipes/`
 
   useEffect(() => {
     axios

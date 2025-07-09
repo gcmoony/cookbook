@@ -7,7 +7,7 @@ function UpdateRecipeInfo(props) {
   const navigate = useNavigate()
   const { id } = useParams()
 
-  const uri = `http://192.168.0.132:1122/api/recipes/${id}`
+  const uri = `http://${import.meta.env.VITE_BACKEND}/api/recipes/${id}`
 
   const [recipe, setRecipe] = useState({
     title: "",
