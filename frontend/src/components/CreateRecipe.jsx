@@ -7,7 +7,7 @@ import RecipeForm from "./RecipeForm"
 function CreateRecipe(props) {
   const navigate = useNavigate()
 
-  const uri = `http://${import.meta.env.VITE_BACKEND}:1122/api/recipes/`
+  const uri = `http://${import.meta.env.VITE_BACKEND}:${import.meta.env.VITE_BACKEND_PORT || 1122}/api/recipes/`
 
   const [recipe, setRecipe] = useState({
     title: "",

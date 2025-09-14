@@ -9,7 +9,7 @@ function ShowRecipeDetails(props) {
   const { id } = useParams()
   const navigate = useNavigate()
 
-  const uri = `http://${import.meta.env.VITE_BACKEND}:1122/api/recipes/${id}`
+  const uri = `http://${import.meta.env.VITE_BACKEND}:${import.meta.env.VITE_BACKEND_PORT || 1122}/api/recipes/${id}`
 
   const onDeleteClick = (id) => {
     axios
