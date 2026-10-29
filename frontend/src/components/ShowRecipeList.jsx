@@ -22,6 +22,17 @@ function ShowRecipeList() {
   const uri = `http://${import.meta.env.VITE_BACKEND}:${import.meta.env.VITE_BACKEND_PORT || 1122}/api/recipes/`
 
   useEffect(() => {
+    // const getRecipes = async () => {
+    //   try {
+    //     const res = await fetch(uri, {headers:{"Content-Type":"application/json"}, method:"GET"})
+    //   const data = await res.json()
+    //   setRecipes(data)
+    //   setCurrentList(data)
+    //   } catch (error) {
+    //     console.log(error)
+    //   }
+    // }
+    // getRecipes()
     axios
       .get(uri)
       .then((res) => {
